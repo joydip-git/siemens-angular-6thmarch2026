@@ -1,0 +1,16 @@
+{
+  "name": "class-inheritance-app",
+  "version": "1.0.0",
+  "description": "sample app for JS classes and inheritance",
+  "main": "./src/index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/plugin-transform-modules-amd": "^7.27.1",
+    "@babel/preset-env": "^7.29.2"
+  }
+}

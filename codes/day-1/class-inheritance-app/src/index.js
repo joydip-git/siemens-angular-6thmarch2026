@@ -1,3 +1,6 @@
+import { Trainee } from "./models/trainee";
+import { Trainer } from "./models/trainer";
+
 var anilTrainer = new Trainer(100, "anil", 1000, "JavaScript")
 var sunilTrainee = new Trainee(101, "sunil", 2000, "HR")
 

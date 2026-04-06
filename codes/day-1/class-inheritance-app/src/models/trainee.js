@@ -1,4 +1,5 @@
-class Trainee extends Person {
+import { Person } from "./person";
+export class Trainee extends Person {
     constructor(id, name, salary, department) {
         super(id, name, salary)
         this.department = department

@@ -23,6 +23,39 @@ Ryan Dahl => 2009 => V8
 
 FEC => Function Execution Context object
 
+module formats:
+-----------------------
+
+1. ES6 module format
+export statement export class Person{}
+import statement: import {Person} from './person'
+
+2. Common JS module format
+class Person{}
+module.exports = {Person: Person}
+var {Person} =  require('./person')
+
+3. AMD : Asynchronous Module Definition format
+
+4. UMD: Universal Module Definition format
+
+
+module loaders:
+-------------------
+common js module loader
+system module loader
+require js module loader -> it understands ONLY AMD format
+etc.
+
+
+transpiler:
+babel => ES6+ syntax code to old vanilla JS code (<ES6)
+	 convert ES6 module to other module format
+
+
+npm i @babel/core @babel/cli @babel/preset-env @babel/plugin-transform-modules-amd -D
+
+
 
 
 

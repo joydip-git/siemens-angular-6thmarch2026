@@ -1,4 +1,4 @@
-class Person{
+export class Person{
     constructor(id, name, salary) {
         this.id = id;
         this.name = name;
@@ -8,3 +8,11 @@ class Person{
         return `${this.id}, ${this.name}, ${this.salary}`
     }
 }
+
+/**
+ * module{
+ *  exports:{
+ *      Person: Person
+ *  }
+ * }
+ */
