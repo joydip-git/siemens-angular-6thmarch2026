@@ -1,0 +1,10 @@
+developer -> 
+	attributes: id, name, basic, da, hra, incentive, totalsalary
+	method: calculateSalary() ->  
+
+hr -> 
+	attributes: id, name, basic, da, hra, gratuity, totalsalary
+	method: calculateSalary() -> 
+
+
+in index.js create some objects of developer and hr and put them in an array and then iterate through the same and print the salary of everyone along with their name

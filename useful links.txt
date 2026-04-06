@@ -1,0 +1,3 @@
+Understanding JavaScript Execution Context:
+
+https://medium.com/@bloodturtle/understanding-javascript-execution-context-a-complete-guide-ca80b4c2fb12
