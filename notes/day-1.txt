@@ -49,11 +49,13 @@ etc.
 
 
 transpiler:
-babel => ES6+ syntax code to old vanilla JS code (<ES6)
+babel [Js - JS] => ES6+ syntax code to old vanilla JS code (<ES6)
 	 convert ES6 module to other module format
 
 
 npm i @babel/core @babel/cli @babel/preset-env @babel/plugin-transform-modules-amd -D
+
+TS - JS: tsc (TypeScript Compiler)
 
 
 
