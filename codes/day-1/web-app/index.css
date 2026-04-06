@@ -1,0 +1,27 @@
+/* h2 {
+            background-color: burlywood;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            border-color: burlywood;
+            border-style: solid;
+            text-align: center;
+        }         */
+/* #headerElement {
+            background-color: burlywood;
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 5px;
+            border-color: burlywood;
+            border-style: solid;
+            text-align: center;
+        } */
+.common-style {
+    background-color: burlywood;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.box-style {
+    border-radius: 5px;
+    border-color: burlywood;
+    border-style: solid;
+}

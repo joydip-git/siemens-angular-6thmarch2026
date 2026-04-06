@@ -1,0 +1,28 @@
+https://github.com/joydip-git/siemens-angular-6thmarch2026
+
+JavaScript and TypeScript
+Node JS
+Environment
+
+HTML
+CSS - Cascading Style Sheet
+	background-color:yellow;font-fmaily:Arial
+	1. inline style
+	2. outline style
+		a. in the same file
+		b. in a separate file (*.css)
+	2.1. element selector
+	2.2. id selector
+JS
+	JS engine
+		1. chrome => V8
+		2. safari => JS Core
+		3. firefox => Spridermonkey
+
+Ryan Dahl => 2009 => V8
+
+FEC => Function Execution Context object
+
+
+
+
