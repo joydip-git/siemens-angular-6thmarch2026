@@ -14,5 +14,16 @@ angular module   class		@NgModule
 
 using module	- yes - no (standalone)
 
+modular approach:
+---------------------------
+app
+	root module (AppModule)
+	root component (AppComponent) - bootstrapper component
+
+
+
+
+https://forms.gle/g6QKXEzwXVYxpMBe8
+
 
 
