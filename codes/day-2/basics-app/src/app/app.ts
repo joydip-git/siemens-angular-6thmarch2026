@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { Calculator } from "./calculator/calculator";
+import { Sample } from "./sample/sample";
 
 @Component({
   selector: 'app-root',
-  imports: [Calculator],
+  imports: [Calculator, Sample],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

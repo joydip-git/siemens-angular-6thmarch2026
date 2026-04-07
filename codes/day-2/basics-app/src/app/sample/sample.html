@@ -1,0 +1,7 @@
+<div>
+    {{multipliedValue()}}
+</div>
+<div>
+    <label for="txtData">Data:&nbsp;</label>
+    <input type="text" [value]="data()" (input)="data.set(+$event.target.value)" id="txtData">
+</div>

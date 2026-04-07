@@ -5,10 +5,13 @@
 </p>
 <div>
   <label for="txtTitle">Title: </label>
-  <input [style.width.px]="width" type="text" id="txtTitle" 
-  [value]="title" (input)="updateTitle($event.target.value)">
+  <input [style.width.px]="width" type="text" id="txtTitle" [value]="title" (input)="updateTitle($event.target.value)">
 </div>
 
 <br>
 <br>
 <app-calculator></app-calculator>
+
+<br>
+<br>
+<app-sample></app-sample>

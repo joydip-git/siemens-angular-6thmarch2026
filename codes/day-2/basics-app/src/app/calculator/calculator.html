@@ -2,36 +2,37 @@
     <legend>Calculator</legend>
     <div>
         <label for="radioAdd">Add:</label>
-        <input type="radio" name="calcradios" id="radioAdd" checked>
+        <input type="radio" name="calcradios" id="radioAdd" checked (change)="updateChoice(1)">
 
         &nbsp;&nbsp;&nbsp;&nbsp;
 
         <label for="radioSubtract">Subtract:</label>
-        <input type="radio" name="calcradios" id="radioSubtract">
+        <input type="radio" name="calcradios" id="radioSubtract" (change)="updateChoice(2)">
 
         &nbsp;&nbsp;&nbsp;&nbsp;
 
         <label for="radioMultiply">Multiply:</label>
-        <input type="radio" name="calcradios" id="radioMultiply">
+        <input type="radio" name="calcradios" id="radioMultiply" (change)="updateChoice(3)">
 
         &nbsp;&nbsp;&nbsp;&nbsp;
 
         <label for="radioDivide">Divide:</label>
-        <input type="radio" name="calcradios" id="radioDivide">
+        <input type="radio" name="calcradios" id="radioDivide" (change)="updateChoice(4)">
     </div>
+
     <div>
         <label for="txtFirst">First Value:&nbsp;</label>
-        <input type="number" id="txtFirst">
+        <input type="number" id="txtFirst" (input)="updateFirst(+$event.target.value)" [value]="firstValue">
     </div>
     <div>
         <label for="txtSecond">Second Value:&nbsp;</label>
-        <input type="number" id="txtSecond">
+        <input type="number" id="txtSecond" (input)="updateSecond(+$event.target.value)" [value]="secondValue">
     </div>
     <div>
-        <input type="button" value="Calculate">
+        <input type="button" value="Calculate" (click)="calculate()">
     </div>
     <div>
         <label for="txtResult">Result:&nbsp;</label>
-        <input type="text" id="txtResult" readonly>
+        <input type="text" id="txtResult" readonly [value]="result">
     </div>
 </fieldset>
