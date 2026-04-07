@@ -1,0 +1,18 @@
+Command Line Interface tool: angular cli
+>npm i @angular/cli --location=global
+
+global path: C:\Users\<user-name>\AppData\Roaming\npm
+
+component - view class		@Component({})
+pipe             class		@Pipe()
+directive        class		@Directive
+
+service		 class		@Injectable()
+
+
+angular module   class		@NgModule
+
+using module	- yes - no (standalone)
+
+
+
