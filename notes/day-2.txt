@@ -20,10 +20,20 @@ app
 	root module (AppModule)
 	root component (AppComponent) - bootstrapper component
 
+Binding:
+----------------------
+1. flow of data from code to view: data binding
+	a. interpolation or mustache syntax
 
+		<element attr="{{prop-name}}">
+		or
+		<element> {{prop-name}} </element>
 
+	b. property binding
+		<element [attr]="prop-name">
+note:
+ interpolation stringifies the data before binding, property binding does not and maintains the originality of the value
 
-https://forms.gle/g6QKXEzwXVYxpMBe8
-
+2. flow of data from view to code: event binding
 
 
