@@ -1,0 +1,28 @@
+<h2 class="text-muted">List of Products</h2>
+<br>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody class="table-dark">
+        @for (product of products; track $index) {
+        <tr>
+            <td>
+                <img [src]="product.imageUrl" alt="NA" [title]="product.productName" class="img-style">
+            </td>
+            <td>{{product.productName}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.starRating}}</td>
+            <td>
+                <button class="btn btn-danger" type="button">Delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

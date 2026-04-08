@@ -1,0 +1,38 @@
+src
+	main.ts
+	styles.css
+	index.html
+
+	app
+		app.ts
+		app.html
+		app.css
+		app.spect.ts
+		app.config.ts
+
+		products	
+			components
+				product-list
+					product-list.ts
+					product-list.html
+					product-list.css
+					product-list.spec.ts
+				
+			services
+			pipes
+			directives
+			validators
+
+		auth
+			components
+			services
+			pipes
+			directives
+			validators
+
+		shared
+			components
+			services
+			pipes
+			directives
+			validators
