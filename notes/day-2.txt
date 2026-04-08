@@ -36,4 +36,16 @@ note:
 
 2. flow of data from view to code: event binding
 
+Signal:
+	1. Writable signal	
+	2. readonly signal 
+
+computed signal => computed(callback)
+
+value = signal(0)
+value.set(1)
+value.update((arg) => arg+1);
+
+
+
 

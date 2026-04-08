@@ -1,0 +1,52 @@
+directives:
+	used as an attribute
+
+	a. structural directives: controls the structure/appearance of a template in the DOM (DOM manipulation)
+		*ngIf (Ngf), *ngFor (NgForOf), *ngSwitch (NgSwitch)
+
+
+	package: @angular/common
+
+	@Directive({
+		selector:'[ngIf]'
+		standalone:true
+	})
+	export class NgIfDirective{}
+
+	//@NgModule({ declarations:[NgIfDirective], exports:[NgIfDirective]})
+	//export class CommonModule{}
+
+	old style:
+	<element *ngIf="">....
+
+	new style:
+	@if(){
+		<element>......
+	}
+
+	b. attribute directives: extend the behavior of an existing element
+		ngModel, ngForm - @angular/forms (FormsModule)
+
+		formControl, formControlName, formGroup, formGroupName
+				- @angular/forms (ReactiveFormsModule)
+
+		ngClass, ngStyle - @angular/common
+
+	@Directive({
+		selector:'[ngModel]'
+		standalone:false
+	})
+	export class NgModelDirective{}
+
+	@NgModule({ declarations:[NgModelDirective], exports:[NgModelDirective]})
+	export class FormsModule{}
+
+	c. component directives: components (directive with a template/view)
+		note: components are used HTML custom tags, where as other directives are used as attributes
+
+	
+any template/component lifecycle:
+---------------------------------------
+	mounting
+	update
+	unmounting and destroy

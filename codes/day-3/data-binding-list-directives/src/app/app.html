@@ -1,0 +1,31 @@
+<h2>Directives</h2>
+<br>
+
+<!-- <button type="button" (click)="show.update((current)=>!current)">{{show()?'Hide':'Show'}}</button> -->
+<button type="button" (click)="toggle()">
+  {{show()?'Hide':'Show'}}
+</button>
+<br>
+<!-- <p *ngIf="show()">this will be displayed conditionally</p> -->
+@if(show()){
+<p>this will be displayed conditionally</p>
+}
+
+<br>
+<ul>
+  <!-- <li *ngFor="let name of names">
+    {{name}}
+  </li> -->
+  @for (name of names; track $index) {
+  <li>{{name}}</li>
+  }
+</ul>
+<br>
+<div>
+  <label for="txtName">Name:&nbsp;</label>
+  <input type="text" id="txtName" [(ngModel)]="nameValue">
+
+  <!-- <input type="text" id="txtName" [value]="nameValue" (input)="updateName($event.target.value)"> -->
+</div>
+<br>
+<span>{{nameValue}}</span>
