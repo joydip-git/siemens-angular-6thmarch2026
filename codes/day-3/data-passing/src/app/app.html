@@ -1,0 +1,7 @@
+<app-firt-nested (valueChanged)="updateParentData($event)"></app-firt-nested>
+
+<br>
+Parent Data:{{parentData}}
+<br>
+
+<app-second-nested [value]="parentData"></app-second-nested>

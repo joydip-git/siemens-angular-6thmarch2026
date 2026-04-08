@@ -1,0 +1,7 @@
+<p>firt-nested component.will sen data to parent</p>
+<div>
+    <label for="txtData">Data:&nbsp;</label>
+    <input type="text" id="txtData" [value]="someData" (input)="updateSomeData(+$event.target.value)">
+    <!-- <input type="text" id="txtData" [(ngModel)]="someData"> -->
+</div>
+<!-- <button type="button" (click)="send()">Send</button> -->

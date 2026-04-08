@@ -72,18 +72,69 @@ export class CurrencyPipe implements PipeTransform{
 	}
 }
 
-
+products|productfilter:<textbox-value>
 
 string str = "hello everyone";
 str.Split(' ',',','.')
 str1.split(' ')
 
 string[] Spilt(params char[] separators){}
+
+
+passing data between components
+A. Not routed components
+	1. when the components are in the same tree
+		a. passing data from the parent component to the shallowly nested component and vice versa
+		b. passing data from the parent component to the deeply nested component
+
+	2. when the components are in different tree
+
+B. Routed components
+	passing data from one routed to another routed component
+
+
+passing data from the parent component to the shallowly nested component
+	techniue: use data binding
+	how to solve:
+	--------------------
+	a nested component should have a property that will be exposed as a custom attribute. for this in the nested component you should have a property of the same data type as of the parent data (that you want to pass)
+	a property of a component is only accessible from the template of the same component
+
+passing data from the the shallowly nested component to the parent component
+	technique: event binding
+	how to solve:
+	------------------
+	a nested component should have a property that will be exposed as a custom event. bind that event in parent component template with a method in the parent component code. when that event is fired from the nested component, emit any data with that event and the parent method will receive it.
+
 	
+
+//new SecondNested().Value=this.parentData
 any template/component lifecycle:
 ---------------------------------------
 	mounting
 	update
 	unmounting and destroy
+
+
+class A{
+	public event EventHandler Click;
+	public void OnClick(){
+		Click(this,null);
+	}
+	int parentData=0;
+	B obj;
+	public A(){
+		obj = new B();
+		obj.data = parentData;
+	}
+}
+A obj = new A();
+EventHandler ev = (object obj,EventArgs e)=>{}
+obj.Click += ev;
+obj.OnClick();
+
+class B{
+	public int data;
+}
 
 
