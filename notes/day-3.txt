@@ -44,6 +44,41 @@ directives:
 	c. component directives: components (directive with a template/view)
 		note: components are used HTML custom tags, where as other directives are used as attributes
 
+
+pipes:
+-------------
+transformer
+
+{{name|uppercase}}
+
+{{name_in_upper}}<- new UpperCasePipe().transform(name)
+
+@Pipe({name:'uppercase', standalone:true})
+export class UpperCasePipe{
+	transform(value:any, ...args:any[]):any{
+		return value.toLocaleUpperCase()
+	}
+}
+
+{{price|curency:'INR'}}
+@Pipe({name:'currency', standalone:true})
+export class CurrencyPipe implements PipeTransform{
+	transform(value:any, ...args:any[]):any{
+		if(args.length>0)
+			const currencyType = args[0]
+			return price with currencySymbol
+		else
+			return price with $
+	}
+}
+
+
+
+string str = "hello everyone";
+str.Split(' ',',','.')
+str1.split(' ')
+
+string[] Spilt(params char[] separators){}
 	
 any template/component lifecycle:
 ---------------------------------------
