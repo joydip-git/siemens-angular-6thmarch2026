@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from '../../pipes/product-filter-pipe';
 import { SERVICE_TOKEN } from '../../../config/constants';
 import { IServiceContract } from '../../services/service-contract';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -19,29 +20,62 @@ export class ProductList implements OnChanges, OnInit, OnDestroy {
   products: WritableSignal<readonly Product[]> = signal([]);
   isLoadingOver = signal(false)
   errorMessage = signal('')
-
   filterText = ''
+  private getSub?: Subscription;
 
   constructor(@Inject(SERVICE_TOKEN) private productSvc: IServiceContract<Product>) {
   }
   ngOnChanges(changes: SimpleChanges): void {
 
   }
+
   ngOnInit(): void {
+    //this.getDataUsingPromise()
+    this.getDataUsingObservable()
+  }
+  ngOnDestroy(): void {
+    this.getSub?.unsubscribe()
+  }
+
+  async getDataUsingPromise() {
     try {
-      console.log('success');
-      this.products.set(this.productSvc.getAll())
-      this.isLoadingOver.set(true)
-      this.errorMessage.set('')
+      const apiResponse = await this.productSvc.fetchAll()
+      if (apiResponse.data !== null) {
+        this.products.set(apiResponse.data)
+        this.errorMessage.set('')
+        this.isLoadingOver.set(true)
+      } else {
+        this.products.set([])
+        this.errorMessage.set(apiResponse.message)
+        this.isLoadingOver.set(true)
+      }
     } catch (error: any) {
-      console.log('error');
       this.products.set([])
-      this.isLoadingOver.set(true)
       this.errorMessage.set(error.message)
+      this.isLoadingOver.set(true)
     }
   }
 
-  
-  ngOnDestroy(): void {
+  getDataUsingObservable() {
+    this.getSub = this.productSvc
+      .getAll()
+      .subscribe({
+        next: (apiResponse) => {
+          if (apiResponse.data !== null) {
+            this.products.set(apiResponse.data)
+            this.errorMessage.set('')
+            this.isLoadingOver.set(true)
+          } else {
+            this.products.set([])
+            this.errorMessage.set(apiResponse.message)
+            this.isLoadingOver.set(true)
+          }
+        },
+        error: (err: any) => {
+          this.products.set([])
+          this.errorMessage.set(err.message)
+          this.isLoadingOver.set(true)
+        }
+      })
   }
 }

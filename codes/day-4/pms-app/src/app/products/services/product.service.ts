@@ -1,5 +1,4 @@
 import { HttpClient } from "@angular/common/http";
-import { productRecords } from "../data/product-records";
 import { Product } from "../models/product";
 import { IServiceContract } from "./service-contract";
 import { inject } from "@angular/core";
@@ -13,7 +12,16 @@ export class ProductService implements IServiceContract<Product> {
     constructor() {
         this.http = inject(HttpClient)
     }
-    
+    async fetchAll(): Promise<ApiResponse<Product[]>> {
+        try {
+            const response = await fetch(PRODUCT_API_URL)
+            const records = (await response.json()) as ApiResponse<Product[]>;
+            return records
+        } catch (error) {
+            throw error
+        }
+    }
+
     get(id: number): Observable<ApiResponse<Product>> {
         return this.http.get<ApiResponse<Product>>(`${PRODUCT_API_URL}/${id}`)
     }
@@ -21,5 +29,4 @@ export class ProductService implements IServiceContract<Product> {
     getAll(): Observable<ApiResponse<Product[]>> {
         return this.http.get<ApiResponse<Product[]>>(PRODUCT_API_URL)
     }
-
 }

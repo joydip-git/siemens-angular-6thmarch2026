@@ -42,3 +42,19 @@ export class ProductList {
   //   this.products = this.productSvc.getAll()
   // }
 }
+
+
+
+ngOnInit(): void {
+    try {
+      console.log('success');
+      this.products.set(this.productSvc.getAll())
+      this.isLoadingOver.set(true)
+      this.errorMessage.set('')
+    } catch (error: any) {
+      console.log('error');
+      this.products.set([])
+      this.isLoadingOver.set(true)
+      this.errorMessage.set(error.message)
+    }
+  }

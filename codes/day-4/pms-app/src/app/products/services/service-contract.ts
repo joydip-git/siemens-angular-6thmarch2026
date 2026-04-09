@@ -7,4 +7,5 @@ export interface IServiceContract<T> {
     //getAll(): readonly T[];
     getAll(): Observable<ApiResponse<T[]>>;
     get(id: number): Observable<ApiResponse<T>>;
+    fetchAll(): Promise<ApiResponse<Product[]>>;
 }
