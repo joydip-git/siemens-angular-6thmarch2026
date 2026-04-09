@@ -2,17 +2,17 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
-import { ProductService } from './products/services/product.service';
-import { SERVICE_TOKEN, SERVICE_TYPE } from './config/constants';
+//import { ProductService } from './products/services/product.service';
+import { provideProductService, SERVICE_TOKEN, SERVICE_TYPE } from './config/constants';
+
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     //ProductService
-    {
-      provide: SERVICE_TOKEN,
-      useClass: SERVICE_TYPE
-    }
+    provideProductService(),
+    provideHttpClient()
   ]
 };

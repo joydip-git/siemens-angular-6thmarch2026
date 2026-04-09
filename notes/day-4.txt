@@ -70,7 +70,21 @@ HTTP Request:
 ----------------------
 package: @angular/common/http
 HttpClient -> built-in service class
-provideHttpClient() -> {provide:HttpClient,useClass:HttpClient }
-
+provideHttpClient() -> returns you the provider for HttpClient which you register in the providers array either at the component level  or at the root level
+{provide:HttpClient,useClass:HttpClient }
 
 HttpClientModule -> providers:[HttpClient] -> deprecated
+
+
+methods of HttpClient:
+----------------------------
+get():Observable	-> sends an HTTP request with GET method
+post	-> sends an HTTP request with POST method	
+put	-> sends an HTTP request with PUT method
+delete
+patch
+options
+etc....
+
+
+Observable
