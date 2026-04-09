@@ -43,3 +43,24 @@ class SomeComponent{
 	}
 	
 }
+
+
+any template/component lifecycle:
+---------------------------------------
+	mounting:
+		1. constructor
+		2. changes: gets fired when the component receives data from its parent (if any) through @Input() property, for the very first time (after constructor call) and every other time in the lifecycle of the component
+		3. init: gets fired for the very first time, after the constructor call and mounting happened and after changes. it is not fired any more till the destruction.
+
+	update:
+		changes
+
+	unmounting and destroy:
+		destroy
+
+
+X		OnX			ngOnX
+-------------------------------------------------
+init   		OnInit  		ngOnInit
+changes    	OnChanges  		ngOnChanges
+destroy		OnDestroy		ngOnDestroy

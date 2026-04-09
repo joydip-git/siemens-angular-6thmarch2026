@@ -109,11 +109,7 @@ passing data from the the shallowly nested component to the parent component
 	
 
 //new SecondNested().Value=this.parentData
-any template/component lifecycle:
----------------------------------------
-	mounting
-	update
-	unmounting and destroy
+
 
 
 class A{

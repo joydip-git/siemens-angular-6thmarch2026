@@ -1,3 +1,13 @@
+@if(isLoadingOver===false){
+<div>Loading...please wait</div>
+}
+@else if(errorMessage!==''){
+<div>{{errorMessage}}</div>
+}
+@else if(!products || products.length===0) {
+<div>No records...</div>
+}
+@else {
 <h2 class="text-muted">List of Products</h2>
 <br>
 <div>
@@ -31,3 +41,4 @@
         }
     </tbody>
 </table>
+}
