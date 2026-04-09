@@ -1,0 +1,45 @@
+service:
+--------------------------------------
+dependency injection of service
+
+create a service class with some methods and common data
+inform angular about the service class for DI
+provider => which provides or creates instance of the service
+	it needs to know about the service class
+	it needs to know about a token for the service class
+		- service class itself can act as a token
+		- you can create a custom token for the service
+
+	wherever in your app the token is used, there an instance of te service will supplied
+interface IServiceContract
+class SomeService:IServiceContract{
+}
+
+
+{
+	provide: SomeService, <- token (service class itself is being used as token)
+	useClass: SomeService <- service class that you are registering
+}
+@Component({....})
+class SomeComponent{
+	private ss:SomeService;
+	constructor(ss:SomeService){
+		this.ss = ss;
+	}
+	
+}
+
+{
+	provide: 'SERVICE_TOKEN', <- token (string token)
+	useClass: SomeService <- service class that you are registering
+}
+
+@Component({....})
+class SomeComponent{
+	
+	private ss:IServiceContract;
+	constructor(@Inject('SERVICE_TOKEN') ss:IServiceContract){
+		this.ss = ss;
+	}
+	
+}

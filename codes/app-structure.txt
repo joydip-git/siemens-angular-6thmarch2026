@@ -19,7 +19,9 @@ src
 					product-list.spec.ts
 				
 			services
+				product.service.ts
 			pipes
+				product-filter.pipe.ts
 			directives
 			validators
 

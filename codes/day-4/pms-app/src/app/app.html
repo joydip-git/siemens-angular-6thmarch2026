@@ -1,0 +1,8 @@
+<div class="container conatiner-fluid">
+  <button type="button" (click)="show.update((current)=>!current)">{{show()?'Hide':'Show'}}</button>
+
+  <br>
+  @if(show()){
+  <app-product-list></app-product-list>
+  }
+</div>

@@ -1,0 +1,44 @@
+import { Component, Inject, inject } from '@angular/core';
+import { Product } from '../../models/product';
+//import { ProductService } from '../../services/product.service';
+import { FormsModule } from '@angular/forms';
+import { ProductFilterPipe } from '../../pipes/product-filter-pipe';
+import { SERVICE_TOKEN } from '../../../config/constants';
+import { IServiceContract } from '../../services/service-contract';
+
+@Component({
+  selector: 'app-product-list',
+  imports: [FormsModule, ProductFilterPipe],
+  templateUrl: './product-list.html',
+  styleUrl: './product-list.css',
+  // providers: [
+  //   ProductService
+  //   // {
+  //   //   provide: ProductService,
+  //   //   useClass: ProductService
+  //   // }
+  // ]
+})
+export class ProductList {
+  products: readonly Product[];
+  //products: Readonly<Product[]>;
+  //private productSvc: IServiceContract<Product>;
+  filterText = ''
+
+  constructor(@Inject(SERVICE_TOKEN) private productSvc: IServiceContract<Product>) {
+    this.products = this.productSvc.getAll()
+  }
+  // constructor(@Inject(SERVICE_TOKEN) productSvc: IServiceContract<Product>) {
+  //   this.productSvc = productSvc
+  //   this.products = this.productSvc.getAll()
+  // }
+
+  // constructor(productSvc: ProductService) {
+  //   this.productSvc = productSvc
+  //   this.products = this.productSvc.getAll()
+  // }
+  // constructor() {
+  //   this.productSvc = inject(ProductService)
+  //   this.products = this.productSvc.getAll()
+  // }
+}
