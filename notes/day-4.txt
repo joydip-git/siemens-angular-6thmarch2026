@@ -87,4 +87,17 @@ options
 etc....
 
 
-Observable
+all methods of HttpClient class return "Observable" type object for response
+
+when the request is over the "observable" gets the data or else an error is thrown if something goes wrong (such as wrong url etc.)
+
+your service class must return the observable as returned by one of the HttpClient method
+
+a component must subscribe to that observable as returned by the service class method by using "subscribe()" method of the "Observable"
+
+a component must pass an object (with collection of callbacks for success, failure etc.) to the "subsribe()" method as an argument
+
+this object is known as "Observer". one of the callbacks in "observer" gets executed at a time depending on the success or failure.
+
+the "subscribe()"  method of the "Observable" object returns an instance of "Subscription" which you must release before the component gets destroyed by calling "unsubscribe()" method of the "Subscription" object
+
