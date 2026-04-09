@@ -1,10 +1,10 @@
-@if(isLoadingOver===false){
+@if(!isLoadingOver()){
 <div>Loading...please wait</div>
 }
-@else if(errorMessage!==''){
-<div>{{errorMessage}}</div>
+@else if(errorMessage()!==''){
+<div>{{errorMessage()}}</div>
 }
-@else if(!products || products.length===0) {
+@else if(products().length===0) {
 <div>No records...</div>
 }
 @else {
@@ -26,7 +26,7 @@
         </tr>
     </thead>
     <tbody class="table-dark">
-        @for (product of products|productfilter:filterText; track $index) {
+        @for (product of products()|productfilter:filterText; track $index) {
         <tr>
             <td>
                 <img [src]="product.imageUrl" alt="NA" [title]="product.productName" class="img-style">

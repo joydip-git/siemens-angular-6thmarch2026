@@ -64,3 +64,13 @@ X		OnX			ngOnX
 init   		OnInit  		ngOnInit
 changes    	OnChanges  		ngOnChanges
 destroy		OnDestroy		ngOnDestroy
+
+
+HTTP Request:
+----------------------
+package: @angular/common/http
+HttpClient -> built-in service class
+provideHttpClient() -> {provide:HttpClient,useClass:HttpClient }
+
+
+HttpClientModule -> providers:[HttpClient] -> deprecated

@@ -1,4 +1,4 @@
-import { Component, Inject, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Inject, OnChanges, OnDestroy, OnInit, signal, SimpleChanges, WritableSignal } from '@angular/core';
 import { Product } from '../../models/product';
 import { FormsModule } from '@angular/forms';
 import { ProductFilterPipe } from '../../pipes/product-filter-pipe';
@@ -12,10 +12,14 @@ import { IServiceContract } from '../../services/service-contract';
   styleUrl: './product-list.css'
 })
 export class ProductList implements OnChanges, OnInit, OnDestroy {
-  //products: readonly Product[] | undefined;
-  products?: readonly Product[];
-  isLoadingOver = false
-  errorMessage = ''
+  // products?: readonly Product[];
+  // isLoadingOver = false
+  // errorMessage = ''
+
+  products: WritableSignal<readonly Product[]> = signal([]);
+  isLoadingOver = signal(false)
+  errorMessage = signal('')
+
   filterText = ''
 
   constructor(@Inject(SERVICE_TOKEN) private productSvc: IServiceContract<Product>) {
@@ -24,17 +28,20 @@ export class ProductList implements OnChanges, OnInit, OnDestroy {
 
   }
   ngOnInit(): void {
-    console.log('init');
     try {
-      this.products = this.productSvc.getAll()
-      this.isLoadingOver = true
-      this.errorMessage = ''
+      console.log('success');
+      this.products.set(this.productSvc.getAll())
+      this.isLoadingOver.set(true)
+      this.errorMessage.set('')
     } catch (error: any) {
-      this.products = undefined
-      this.isLoadingOver = true
-      this.errorMessage = error.message
+      console.log('error');
+      this.products.set([])
+      this.isLoadingOver.set(true)
+      this.errorMessage.set(error.message)
     }
   }
+
+  
   ngOnDestroy(): void {
   }
 }
