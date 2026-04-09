@@ -101,3 +101,20 @@ this object is known as "Observer". one of the callbacks in "observer" gets exec
 
 the "subscribe()"  method of the "Observable" object returns an instance of "Subscription" which you must release before the component gets destroyed by calling "unsubscribe()" method of the "Subscription" object
 
+
+
+XMLHttpRequest object:
+---------------------------
+readystate:0
+	readystatechange
+readystate:1
+	readystatechange
+readystate:2
+	readystatechange
+readystate:3
+	readystatechange
+readystate:4
+
+
+
+
