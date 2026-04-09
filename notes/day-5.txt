@@ -1,0 +1,18 @@
+routing:
+---------------------
+
+
+.../products		=> PL Route -> {path:'products', component:PL}
+.../products/view/{id}	=> PD Route -> {path:'products/view/:id', component:PD}
+.../products/edit/{id}	=> EP Route -> {path:'products/edit/:id', component:EP}
+.../products/add	=> AP Route -> {path:'products/add', component:AP}
+
+.../home		=> Home Route -> {path:'home', component:Home}
+
+.../	-> .../home	=> Home Route -> {path:'/', redirectTo:'/home', pathMatch:'full' }
+
+
+.../*****		=> PNF Route -> {path:'**', component:PNF}
+
+package: @angular/router
+

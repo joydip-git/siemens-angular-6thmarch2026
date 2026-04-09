@@ -17,6 +17,11 @@ src
 					product-list.html
 					product-list.css
 					product-list.spec.ts
+				filter-product
+				product-detail
+				edit-product
+				add-product			
+				
 				
 			services
 				product.service.ts
@@ -27,6 +32,8 @@ src
 
 		auth
 			components
+				login
+				registration				
 			services
 			pipes
 			directives
@@ -34,6 +41,9 @@ src
 
 		shared
 			components
+				home
+				navbar
+				page-not-found
 			services
 			pipes
 			directives
