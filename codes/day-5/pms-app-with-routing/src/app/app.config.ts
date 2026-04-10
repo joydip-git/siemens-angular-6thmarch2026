@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 //import { ProductService } from './products/services/product.service';
 import { provideProductService, SERVICE_TOKEN, SERVICE_TYPE } from './config/constants';
 
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [

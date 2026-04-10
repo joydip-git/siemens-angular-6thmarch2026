@@ -1,1 +1,14 @@
-<p>product-detail works!</p>
+@if(!isRequestOver()){
+<div>Loading...please wait</div>
+}
+@else if(errorMessage()!==''){
+<div>{{errorMessage()}}</div>
+}
+@else if(!product()){
+<div>No record...</div>
+}
+@else {
+<div>{{ product()?.productName}}</div>
+}
+<br>
+<button type="button" class="btn btn-primary" (click)="goto()">Edit</button>

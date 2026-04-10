@@ -3,6 +3,8 @@ import { ProductService } from "../products/services/product.service"
 
 export const PRODUCT_API_URL = 'http://localhost:3000/products'
 
+export const AUTH_API_URL = "http://127.0.0.1:3000/auth"
+
 export const SERVICE_TOKEN = 'SERVICE_TOKEN'
 export const SERVICE_TYPE = ProductService
 

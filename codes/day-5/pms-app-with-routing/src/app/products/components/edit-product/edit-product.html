@@ -1,1 +1,9 @@
-<p>edit-product works!</p>
+@if(productInfo()!== undefined){
+<div>
+    <label for="txtName">Name: &nbsp;</label>
+    <input type="text" id="txtName" [value]="productInfo()?.productName">
+</div>
+}
+@else {
+<div>No product found....</div>
+}
