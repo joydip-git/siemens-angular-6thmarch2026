@@ -2,10 +2,21 @@ routing:
 ---------------------
 all routing related assets are in this package: @angular/router
 
+simple types:
+-------------------
 individual route: Route type
 	properties: path, component, redirectTo, pathMatch etc.
 
 collection of routes: Routes (type Routes = Route[])
+Route and Routes are simple types
+
+directives:
+--------------------
+routerLink
+
+component:
+------------------
+router-outlet
 
 pms app routes:
 ------------------------
