@@ -12,7 +12,9 @@ Route and Routes are simple types
 
 directives:
 --------------------
-routerLink
+routerLink -> assign either a string path or an array of string path fragments
+	routerLink="/products"
+	[routerLink]="['/products','view',product.productId]"
 
 component:
 ------------------

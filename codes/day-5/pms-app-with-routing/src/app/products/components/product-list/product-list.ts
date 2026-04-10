@@ -5,10 +5,11 @@ import { ProductFilterPipe } from '../../pipes/product-filter-pipe';
 import { SERVICE_TOKEN } from '../../../config/constants';
 import { IServiceContract } from '../../services/service-contract';
 import { Subscription } from 'rxjs';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-product-list',
-  imports: [FormsModule, ProductFilterPipe],
+  imports: [FormsModule, ProductFilterPipe, RouterLink],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'
 })
