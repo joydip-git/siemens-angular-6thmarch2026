@@ -1,1 +1,19 @@
-<p>registration works!</p>
+<form ngForm #frm="ngForm" (submit)="register(frm)">
+    <fieldset>
+        <legend>Register</legend>
+        <div>
+            <label for="txtUserName">UserName: &nbsp;</label>
+            <!-- <input type="text" id="txtUserName" [(ngModel)]="username"> -->
+            <input type="text" id="txtUserName" name="username" ngModel>
+        </div>
+
+        <div>
+            <label for="txtPassword">Password: &nbsp;</label>
+            <input type="password" id="txtPassword" name="password" ngModel>
+        </div>
+
+        <div>
+            <button type="submit">Register</button>
+        </div>
+    </fieldset>
+</form>

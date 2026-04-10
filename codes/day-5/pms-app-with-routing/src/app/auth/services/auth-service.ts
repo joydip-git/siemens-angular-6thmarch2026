@@ -6,6 +6,7 @@ import { AUTH_API_URL } from '../../config/constants';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
+    
     private http = inject(HttpClient)
 
     loginUser(user: User) {

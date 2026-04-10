@@ -62,3 +62,15 @@ Authorization: Bearer <token>
 https://forms.gle/NjStmrvaJZ97Enxg6
 
 
+auth guards:
+❯◉ CanActivate
+ ◯ CanActivateChild
+ ◯ CanDeactivate
+ ◯ CanMatch
+
+
+1. template-driven form: FormsModule and ngForm, ngModel directives
+2. reactive form: ReactiveFormsModule and formGroup, formControl, formControlName directives
+3. signal form
+
+

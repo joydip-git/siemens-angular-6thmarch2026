@@ -19,7 +19,12 @@
                     <a class="nav-link" routerLink="/products/add">
                         ADD NEW PRODUCT
                     </a>
-                </li>              
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" (click)="logout()">
+                        {{ tokenSvc.getToken()===null?'Login':'Logout'}}
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
