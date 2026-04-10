@@ -1,6 +1,14 @@
 routing:
 ---------------------
+all routing related assets are in this package: @angular/router
 
+individual route: Route type
+	properties: path, component, redirectTo, pathMatch etc.
+
+collection of routes: Routes (type Routes = Route[])
+
+pms app routes:
+------------------------
 
 .../products		=> PL Route -> {path:'products', component:PL}
 .../products/view/{id}	=> PD Route -> {path:'products/view/:id', component:PD}
@@ -14,5 +22,4 @@ routing:
 
 .../*****		=> PNF Route -> {path:'**', component:PNF}
 
-package: @angular/router
 
